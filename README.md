@@ -20,6 +20,16 @@ Here you can set up this project in two ways
     ```
     $ cp .env.example .env
     $ nano .env
+    
+    replase below 
+    
+    DB_CONNECTION=mysql
+    DB_HOST=database
+    DB_PORT=3306
+    DB_DATABASE=runner
+    DB_USERNAME=root
+    DB_PASSWORD=root
+    
     ```
 4. Database setup and insert fake data
     ```
