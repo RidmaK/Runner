@@ -52,7 +52,7 @@ Here you can set up this project in two ways
 
 1. Clone this repository
     ```
-    $ git clone https://github.com/ashenud/model-usage.git
+    $ git clone https://github.com/RidmaK/Runner.git
     ```
 2. Edit configuration files.
     ```
