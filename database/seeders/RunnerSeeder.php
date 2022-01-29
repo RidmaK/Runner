@@ -17,7 +17,7 @@ class RunnerSeeder extends Seeder
     {
         $faker = Faker::create();
         // following line retrieve all the user_ids from DB
-        $meetings = Race::all()->pluck('id');
+        $races = Race::all()->pluck('id');
         foreach(range(1,50) as $index){
             $Race = Runner::create([
                 'name' => $faker->Name(),
@@ -25,7 +25,7 @@ class RunnerSeeder extends Seeder
                 'color' => $faker->regexify('[A-Za-z]{1}'),
                 'Owner' => $faker->Name(),
                 'age' => $faker->regexify('[0-9]{2}'),
-                'race_id' => $faker->randomElement($meetings),
+                'race_id' => $faker->randomElement($races),
             ]);
         }
     }
