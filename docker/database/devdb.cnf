@@ -1,0 +1,8 @@
+[mysqld]
+console=1
+log-output=FILE
+log-error=/var/log/mysql/mysql
+general-log=1
+general-log-file=/var/log/mysql/mysql.queries
+max-connect-errors=4294967295
+max_allowed_packet=500M

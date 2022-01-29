@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  backend:
+    image: img-runner
+    build: backend
+    container_name: con-runner
+    restart: always
+    ports:
+    - "7780:80"
+    volumes:
+    - "../../Runner:/var/www"
+    working_dir: /var/www
+    links:
+    - database:devdb
+  database:
+    image: img-mysql
+    build: database
+    container_name: con-mysql
+    environment:
+    - TZ=Asia/Colombo
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: con-phpmyadmin
+    links:
+    - database:devdb
+    ports:
+    - "7781:80"
+    environment:
+    - PMA_HOST=devdb

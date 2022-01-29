@@ -37,19 +37,6 @@ Here you can set up this project in two ways
 
 ###  02. Run in a Docker container
 
-0. Initial setup on amarzon linux 2 EC2 (Optional)
-    ```
-    $ sudo su
-    $ yum update -y
-    $ yum install -y docker
-    $ service docker start
-    $ yum update -y
-    $ yum install git -y
-    $ curl -L https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
-    $ chmod +x /usr/local/bin/docker-compose
-    $ ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
-    ```
-
 1. Clone this repository
     ```
     $ git clone https://github.com/RidmaK/Runner.git
@@ -66,20 +53,29 @@ Here you can set up this project in two ways
     ```
 4. Install backend depedencies and front end depedencies.
     ```
-    $ docker exec -it backend composer update
+    $ docker exec -it con-runner composer install
     ```
-5. Database setup and insert fake data
+5. config cache
     ```
-    $ docker exec -it backend php artisan migrate:fresh --seed
+    $ docker exec -it con-runner php artisan config:cache
+    
     ```
-6. Generate an application key and create a passport key
+6. Create mysql database
     ```
-    $ docker exec -it backend php artisan key:generate
-    $ docker exec -it backend php artisan passport:install
+    $ docker exec con-mysql mysql -u root -proot -e 'CREATE DATABASE runner'
+    
     ```
-7. Give permission to storage folder
+7. Database setup and insert fake data
     ```
-    $ docker exec -it backend chmod -R 777 storage
+    $ docker exec -it con-runner php artisan migrate:fresh --seed
+    ```
+8. Generate an application key and create a passport key
+    ```
+    $ docker exec -it con-runner php artisan key:generate
+    ```
+9. Give permission to storage folder
+    ```
+    $ docker exec -it con-runner chmod -R 777 storage
     ```
 
 
