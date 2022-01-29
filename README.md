@@ -13,7 +13,7 @@ Here you can set up this project in two ways
     ```
 2. Install backend depedencies and front end depedencies.
     ```
-    $ cd model-usage
+    $ cd Runner
     $ composer install
     ```
 3. Edit configuration files.
@@ -56,7 +56,7 @@ Here you can set up this project in two ways
     ```
 2. Edit configuration files.
     ```
-    $ cd model-usage
+    $ cd Runner
     $ cp .env.example .env
     $ nano .env
     ```
