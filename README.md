@@ -79,5 +79,5 @@ Here you can set up this project in two ways
     ```
 
 
-When using the Docker container, use 9090 as the port, you can change it in docker compose file
+When using the Docker container, use 7780 as the port, you can change it in docker compose file
 
