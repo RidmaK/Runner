@@ -14,7 +14,7 @@ class Runner extends Model
     {
         return $this->belongsTo(Race::class);
     }
-    public function lastRun()
+    public function lastRuns()
     {
         return $this->hasMany(FormLastRunr::class);
     }
