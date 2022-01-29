@@ -49,6 +49,7 @@ Here you can set up this project in two ways
     ```
 3. Run docker containers.
     ```
+    $ cd docker
     $ docker-compose up -d
     ```
 4. Install backend depedencies and front end depedencies.
