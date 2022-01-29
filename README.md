@@ -9,7 +9,7 @@ Here you can set up this project in two ways
 
 1. Clone this repository
     ```
-    $ git clone 
+    $ git clone https://github.com/RidmaK/Runner.git 
     ```
 2. Install backend depedencies and front end depedencies.
     ```
