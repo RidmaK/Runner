@@ -9,11 +9,11 @@ Here you can set up this project in two ways
 
 1. Clone this repository
     ```
-    $ git clone 
+    $ git clone https://github.com/RidmaK/Runner.git 
     ```
 2. Install backend depedencies and front end depedencies.
     ```
-    $ cd model-usage
+    $ cd Runner
     $ composer install
     ```
 3. Edit configuration files.
@@ -52,11 +52,11 @@ Here you can set up this project in two ways
 
 1. Clone this repository
     ```
-    $ git clone https://github.com/ashenud/model-usage.git
+    $ git clone https://github.com/RidmaK/Runner.git
     ```
 2. Edit configuration files.
     ```
-    $ cd model-usage
+    $ cd Runner
     $ cp .env.example .env
     $ nano .env
     ```
