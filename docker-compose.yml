@@ -1,0 +1,47 @@
+version: '3'
+
+services:
+  backend:
+    build:
+      context: ./
+      dockerfile: dockerfile
+    image: php:laravel
+    container_name: backend
+    restart: always
+    ports:
+      - "9090:80"
+    volumes:
+      - "./:/var/www"
+    working_dir: /var/www
+    networks:
+      database-link:
+        ipv4_address: 172.16.238.11
+        ipv6_address: 2001:3984:3989::11
+
+  database:
+    container_name: ${DB_HOST}
+    image: mysql/mysql-server
+    command: mysqld --default-authentication-plugin=mysql_native_password --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    restart: always
+    ports:
+        - 3306:3306
+    environment:
+      MYSQL_DATABASE: '${DB_DATABASE}'
+      MYSQL_USER: '${DB_USERNAME}'
+      MYSQL_PASSWORD: '${DB_PASSWORD}'
+      MYSQL_ROOT_PASSWORD: '${DB_ROOT_PASSWORD}'
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+    networks:
+      database-link:
+        ipv4_address: 172.16.238.12
+        ipv6_address: 2001:3984:3989::12
+
+networks:
+  database-link:
+    name: database-link
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: "172.16.238.0/24"
+        - subnet: "2001:3984:3989::/64"
