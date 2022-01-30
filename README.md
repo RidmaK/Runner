@@ -90,7 +90,6 @@ Here you can set up this project in two ways
 5. Generate an application key and create a passport key
     ```
     $ php artisan key:generate
-    $ php artisan passport:install
     ```
 6. Serve the project
     ```
