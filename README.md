@@ -60,10 +60,10 @@ Here you can set up this project in two ways
     ```
 ### Testing
     ```
-      phpmyadmin
+    $ phpmyadmin
       http://localhost:7781/
 
-      Postman testing URL
+    $  Postman testing URL
       http://localhost:7780/api/v1/runner/10/form-data
     ```
 
@@ -98,8 +98,8 @@ Here you can set up this project in two ways
     ```
 ### Testing
     ```
-    Postman testing URL
-    http://127.0.0.1:8000/api/v1/runner/10/form-data
+    $ Postman testing URL
+       http://127.0.0.1:8000/api/v1/runner/10/form-data
     ```
 
 
