@@ -58,14 +58,14 @@ Here you can set up this project in two ways
     ```
     $ docker exec -it con-runner chmod -R 777 storage
     ```
-Testing
-    ```
-    $ phpmyadmin
+### Testing
+    
+     phpmyadmin
       http://localhost:7781/
 
-    $  Postman testing URL
+      Postman testing URL
       http://localhost:7780/api/v1/runner/10/form-data
-    ```
+    
 
 ### 02. Normal process
 
@@ -96,11 +96,11 @@ Testing
     ```
     $ php artisan serve
     ```
-Testing
-    ```
+### Testing
+    
     $ Postman testing URL
        http://127.0.0.1:8000/api/v1/runner/10/form-data
-    ```
+    
 
 
 When using the Docker container, use 7780 as the port, you can change it in docker compose file
